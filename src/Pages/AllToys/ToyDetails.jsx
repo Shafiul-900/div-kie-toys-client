@@ -1,14 +1,10 @@
 
 import {  useLoaderData } from "react-router-dom";
-import Navbar from "../Sheaird/Navbar/Navbar";
-import Footer from "../Sheaird/Footer/Footer";
 
 const ToyDetails = () => {
     const { picture_url, car_toy_name, } = useLoaderData();
 
     return (
-        <div>
-            <Navbar></Navbar>
             <div className="card w-3/4 mx-auto bg-base-100 shadow-xl">
                 <figure className="w-full"><img src={picture_url} alt="Shoes" /></figure>
                 <div className="card-body">
@@ -19,8 +15,6 @@ const ToyDetails = () => {
                     </div>
                 </div>
             </div>
-            <Footer></Footer>
-        </div>
     );
 };
 

@@ -1,7 +1,18 @@
 import { Link } from "react-router-dom";
 import logo from "../../../assets/rsz_2images-removebg-preview.png"
+import { useContext } from "react";
+import { AuthContext } from "../../../providers/AuthProvider";
 
 const Navbar = () => {
+    const { user, logOut } = useContext(AuthContext);
+
+    const handelLogOut = () => {
+        logOut()
+        .then(result => {
+            console.log(result);
+        })
+        .catch(error => console.log(error))
+    }
 
     const navItems = <>
         <li><Link to='/'>Home</Link></li>
@@ -11,7 +22,7 @@ const Navbar = () => {
         <li><Link to='/login'>Blog</Link></li>
     </>
     return (
-        <div style={{position:"sticky" , top: '0' , zIndex: "1"}} className=" navbar bg-slate-200 h-8 mb-4">
+        <div style={{ position: "sticky", top: '0', zIndex: "1" }} className=" navbar bg-slate-200 h-8 mb-4">
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -38,9 +49,14 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end" >
-                <Link>
-                    <img style={{ height: "50px" }} className="rounded-full " src="https://scontent.fird1-1.fna.fbcdn.net/v/t39.30808-6/300871888_186827353761336_7485609753196859161_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeHdLoiBwgP1L9fDVZvjjWhrXyqPDI9VClpfKo8Mj1UKWu8xWvyMyBxnR3peSH5XCsfY0i7LSmn7UD4bsjZKgIHH&_nc_ohc=_imjC2k4H4wAX_jhHp1&_nc_ht=scontent.fird1-1.fna&oh=00_AfAHm0mU5colS-LTdZUvXzQ8vDiIUVZZHaExptWa_lzweg&oe=646AF887" title="shafiul Islam" />
-                </Link>
+                {
+                    user && 
+                        // <img style={{ height: "50px" }} className="rounded-full " src={user?.photo_url} title="shafiul Islam" />
+                        <span>{user?.email} <button onClick={handelLogOut}>LogOut</button></span>
+                        //  <Link>
+                        //     <img style={{ height: "50px" }} className="rounded-full " src="https://scontent.fird1-1.fna.fbcdn.net/v/t39.30808-6/300871888_186827353761336_7485609753196859161_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeHdLoiBwgP1L9fDVZvjjWhrXyqPDI9VClpfKo8Mj1UKWu8xWvyMyBxnR3peSH5XCsfY0i7LSmn7UD4bsjZKgIHH&_nc_ohc=_imjC2k4H4wAX_jhHp1&_nc_ht=scontent.fird1-1.fna&oh=00_AfAHm0mU5colS-LTdZUvXzQ8vDiIUVZZHaExptWa_lzweg&oe=646AF887" title="shafiul Islam" />
+                        // </Link>
+               }
             </div>
         </div>
     );

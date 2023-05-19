@@ -1,13 +1,17 @@
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../providers/AuthProvider";
 
 
 const Register = () => {
 
+    const navigate = useNavigate();
+    const location = useLocation();
+    const from = location?.state?.from?.pathname || "/"
 
-    const {createUser} = useContext(AuthContext);
+    const { createUser, googleSignIn } = useContext(AuthContext);
 
+    // handel register signIn
     const handelSignUp = event => {
         event.preventDefault();
         const form = event.target;
@@ -17,17 +21,32 @@ const Register = () => {
         console.log(name, email, password)
 
         createUser(email, password)
-        .then(result => {
-            const user = result.user;
-            console.log(user);
-        })
-        .catch(error => {
-            console.log(error);
-        })
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+                navigate(from, { replace: true });
+                form.reset();
+            })
+            .catch(error => {
+                console.log(error);
+            })
+    };
+
+    // google signIn handler
+    const handelGoogleSignIn = () => {
+        googleSignIn()
+            .then(result => {
+                const googleUser = result.user;
+                console.log(googleUser);
+                navigate(from, { replace: true });
+            })
+            .catch(error => {
+                console.log(error);
+            })
     }
 
     return (
-        <div className="hero min-h-screen bg-base-200">
+        <div className="hero my-10 min-h-screen ">
             <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                 <div className="card-body">
                     <h1 className="text-5xl text-black font-bold">Register</h1>
@@ -65,9 +84,13 @@ const Register = () => {
                     </form>
                     <p>If you already have an account, just <Link className="text-blue-500 font-bold" to='/login'>login</Link>.</p>
                 </div>
+                    <hr  className="w-2/3 mx-auto font-bold " />
+                <div className="w-2/1 flex mx-auto justify-between ">
+                    <Link className="font-bold mb-3 text-2xl text-red-500  mr-7" onClick={handelGoogleSignIn}>Google</Link>
+                    <Link className="font-bold mb-3 text-2xl text-green-500 " onClick={handelGoogleSignIn}>GitHub</Link>
+                </div>
             </div>
         </div>
-
     );
 };
 

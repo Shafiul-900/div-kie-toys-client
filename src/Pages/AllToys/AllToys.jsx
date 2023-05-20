@@ -11,7 +11,7 @@ const AllToys = () => {
     }, [])
     return (
         <div style={{ position: 'relative' }}>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 container mx-auto ">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 container mx-auto py-5 ">
                 {
                     toys.map(toy => <AllToysCard
                         key={toy._id}

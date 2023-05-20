@@ -1,4 +1,4 @@
-
+import Swal from 'sweetalert2'
 
 const AddToys = () => {
 
@@ -30,13 +30,20 @@ const AddToys = () => {
       .then(res => res.json())
       .then(data => {
          console.log(data);
+         if(data.insertedId){
+            Swal.fire({
+               title: 'success!',
+               text: 'Toys Added successfully',
+               icon: 'success',
+               confirmButtonText: 'Ok'
+             })
+         }
       })
    };
 
    return (
 
       <div className="container mx-auto">
-         <h3 className="text-3xl text-center ">Book Service </h3>
          <form onSubmit={handelAddToys}>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                <div className="form-control">

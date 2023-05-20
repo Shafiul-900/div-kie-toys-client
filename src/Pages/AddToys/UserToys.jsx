@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 
 
 const UserToys = ({ toys, handelDelete}) => {
@@ -35,7 +36,7 @@ const UserToys = ({ toys, handelDelete}) => {
             <td>{price}</td>
             <th>
                 <button className="btn  btn-ghost btn-xs">details</button>
-                <button className="btn btn-ghost btn-xs">Edit</button>
+                <Link to={`/editToys/${_id}`}><button  className="btn btn-ghost btn-xs">Edit</button></Link>
             </th>
         </tr>
     );

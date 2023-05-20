@@ -1,4 +1,4 @@
-import Swal from 'sweetalert2'
+import Swal from "sweetalert2";
 
 const AddToys = () => {
 
@@ -20,7 +20,7 @@ const AddToys = () => {
       // console.log(toys);
       // form.reset();
 
-      fetch('http://localhost:5000/toys', {
+      fetch('https://toys-dickie-server.vercel.app/toys', {
          method: "POST",
          headers: {
             'content-type': 'application/json'

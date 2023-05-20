@@ -19,7 +19,7 @@ const Navbar = () => {
         <li><Link to='/allToys'>All Toys</Link></li>
         <li><Link to='/addtoys'>Add Toys</Link></li>
         <li><Link to='/mytoys'>My Toys</Link></li>
-        <li><Link to='/blog'>Blog</Link></li>
+        <li><Link to='/blog'>Blogs</Link></li>
     </>
     return (
         <div style={{ position: "sticky", top: '0', zIndex: "1" }} className=" navbar bg-slate-200 h-8 mb-4">

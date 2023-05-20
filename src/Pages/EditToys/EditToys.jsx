@@ -24,8 +24,8 @@ const EditToys = () => {
         // console.log(toys);
         // form.reset();
   
-        fetch(`http://localhost:5000/toys/${_id}`, {
-           method: "PUT",
+        fetch(`https://toys-dickie-server.vercel.app/toys/${_id}`, {
+           method: "PATCH",
            headers: {
               'content-type': 'application/json'
            },
@@ -42,7 +42,8 @@ const EditToys = () => {
                  confirmButtonText: 'Ok'
                })
            }
-        }) 
+        })
+ 
      };
 
     return (

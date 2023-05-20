@@ -9,7 +9,7 @@ const MyToys = () => {
     const [mytoys, setMytoys] = useState([]);
 
 
-    const url = `http://localhost:5000/toys?email=${user?.email}`;
+    const url = `https://toys-dickie-server.vercel.app/toys/?email=${user?.email}`;
     useEffect(() => {
         fetch(url)
             .then(res => res.json())
@@ -20,7 +20,7 @@ const MyToys = () => {
         const alert = confirm('Are You sure delete ?')
 
         if (alert) {
-            fetch(`http://localhost:5000/toys/${id}`, {
+            fetch(`https://toys-dickie-server.vercel.app/toys/${id}`, {
                 method: "DELETE",
 
             })

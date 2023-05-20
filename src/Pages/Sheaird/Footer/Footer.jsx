@@ -3,7 +3,7 @@ import logo from '../../../assets/rsz_2images-removebg-preview.png'
 const Footer = () => {
     return (
         <div>
-            <footer className="footer p-10 bg-slate-200 text-base-content">
+            <footer className="footer p-10 pb-0 bg-slate-200 text-base-content">
                 <div>
                     <span className="footer-title">Services</span>
                     <a className="link link-hover">sports car</a>

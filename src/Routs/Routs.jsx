@@ -28,7 +28,7 @@ const router = createBrowserRouter([
       {
         path: '/toys/:_id',
         element: <PricetRoute><ToyDetails></ToyDetails></PricetRoute>,
-        loader: ({ params }) => fetch(`http://localhost:5000/toys/${params._id}`)
+        loader: ({ params }) => fetch(`https://toys-dickie-server.vercel.app/toys/${params._id}`)
       },
       {
         path: '/login',
@@ -49,7 +49,7 @@ const router = createBrowserRouter([
       {
         path: '/editToys/:id',
         element: <EditToys></EditToys>,
-        loader: ({ params }) => fetch(`http://localhost:5000/toys/${params.id}`)
+        loader: ({ params }) => fetch(`https://toys-dickie-server.vercel.app/toys/${params.id}`)
       },
       {
         path: '/blog',

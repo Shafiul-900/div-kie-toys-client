@@ -17,9 +17,21 @@ const AddToys = () => {
       const description = form.description.value;
       const title = form.title.value;
       const toys = {seller_name, email, photo, toys_name, sub_category, price, rating, quantity, description, title};
-      console.log(toys);
-      form.reset();
-   }
+      // console.log(toys);
+      // form.reset();
+
+      fetch('http://localhost:5000/toys', {
+         method: "POST",
+         headers: {
+            'content-type': 'application/json'
+         },
+         body: JSON.stringify(toys)
+      })
+      .then(res => res.json())
+      .then(data => {
+         console.log(data);
+      })
+   };
 
    return (
 

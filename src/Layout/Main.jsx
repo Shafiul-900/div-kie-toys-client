@@ -4,7 +4,7 @@ import Navbar from "../Pages/Sheaird/Navbar/Navbar";
 
 const Main = () => {
     return (
-        <div>
+        <div className="bg-black">
             <Navbar></Navbar>
             <Outlet></Outlet>
             <Footer></Footer>

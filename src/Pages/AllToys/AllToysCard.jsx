@@ -2,11 +2,11 @@ import { Link } from "react-router-dom";
 import { FaArrowRight } from 'react-icons/fa';
 
 const AllToysCard = ({ toy }) => {
-    const { _id, picture_url, car_toy_name, selar_name, price } = toy;
+    const { _id, picture_url, car_toy_name,  price } = toy;
     return (
-        <div className="card w-96 bg-base-100 shadow-xl">
-            <figure className="px-10 pt-10">
-                <img src={picture_url} alt="Shoes" className="rounded-xl h-72" />
+        <div className="card w-96 bg-slate-200 shadow-xl">
+            <figure className="">
+                <img src={picture_url} alt="Shoes" className="rounded-xl h-72 w-full" />
             </figure>
             <div className="card-body">
                 <h2 className="card-title">{car_toy_name}</h2>

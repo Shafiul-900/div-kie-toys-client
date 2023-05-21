@@ -21,7 +21,7 @@ const Navbar = () => {
         <li><Link to='/blog'>Blogs</Link></li>
     </>
     return (
-        <div style={{ position: "sticky", top: '0', zIndex: "1" }} className=" navbar bg-slate-200 h-8 ">
+        <div style={{ position: "sticky", top: '0', zIndex: "1" }} className=" navbar bg-slate-200 h-8 px-5 ">
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn btn-ghost lg:hidden">

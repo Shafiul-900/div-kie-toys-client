@@ -1,6 +1,6 @@
 import { FaRegStar, FaStar } from "react-icons/fa";
 import Rating from "react-rating";
-import { Link, useLoaderData } from "react-router-dom";
+import {  useLoaderData } from "react-router-dom";
 
 const ToyDetails = () => {
     const { photo, toys_name, price, description, sub_category, rating, email, seller_name

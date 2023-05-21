@@ -53,6 +53,7 @@ const AddToys = () => {
                   <label className="label">
                      <span className="label-text">Seller Name</span>
                   </label>
+                  
                   <input type="text" name="seller_name" defaultValue={user && user?.displayName}  placeholder="Seller Name" className="input input-bordered" />
                </div>
                <div className="form-control">
@@ -77,19 +78,19 @@ const AddToys = () => {
                   <label className="label">
                      <span className="label-text">Sub Category</span>
                   </label>
-                  <input type="text" name="sub_category" defaultValue={"sport car toys"}  placeholder="Sub Category" className="input input-bordered" />
+                  <input type="text" name="sub_category"   placeholder="Sub Category" className="input input-bordered" />
                </div>
                <div className="form-control">
                   <label className="label">
                      <span className="label-text">Price</span>
                   </label>
-                  <input type="text" name="price" defaultValue={599} placeholder="Price" className="input input-bordered" />
+                  <input type="text" name="price"  placeholder="Price" className="input input-bordered" />
                </div>
                <div className="form-control">
                   <label className="label">
                      <span className="label-text">Rating</span>
                   </label>
-                  <input type="text" name="rating" defaultValue={4.2}  placeholder="Rating" className="input input-bordered" />
+                  <input type="text" name="rating"  placeholder="Rating" className="input input-bordered" />
                </div>
                <div className="form-control">
                   <label className="label">

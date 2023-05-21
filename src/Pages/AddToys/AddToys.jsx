@@ -1,7 +1,10 @@
+import { useContext } from "react";
 import Swal from "sweetalert2";
+import { AuthContext } from "../../providers/AuthProvider";
 
 const AddToys = () => {
 
+   const {user} = useContext(AuthContext);
 
    const handelAddToys = event => {
       event.preventDefault();
@@ -17,8 +20,8 @@ const AddToys = () => {
       const description = form.description.value;
       const title = form.title.value;
       const toys = {seller_name, email, photo, toys_name, sub_category, price, rating, quantity, description, title};
-      // console.log(toys);
-      // form.reset();
+      console.log(toys)
+      form.reset();
 
       fetch('https://toys-dickie-server.vercel.app/toys', {
          method: "POST",
@@ -50,13 +53,13 @@ const AddToys = () => {
                   <label className="label">
                      <span className="label-text">Seller Name</span>
                   </label>
-                  <input type="text" name="seller_name"  placeholder="Seller Name" className="input input-bordered" />
+                  <input type="text" name="seller_name" defaultValue={user && user?.displayName}  placeholder="Seller Name" className="input input-bordered" />
                </div>
                <div className="form-control">
                   <label className="label">
                      <span className="label-text">Email</span>
                   </label>
-                  <input type="email" name="email" placeholder="Email" className="input input-bordered" />
+                  <input type="email" name="email" placeholder="Email" defaultValue={user && user.email} className="input input-bordered" />
                </div>
                <div className="form-control">
                   <label className="label">
@@ -74,19 +77,19 @@ const AddToys = () => {
                   <label className="label">
                      <span className="label-text">Sub Category</span>
                   </label>
-                  <input type="text" name="sub_category"  placeholder="Sub Category" className="input input-bordered" />
+                  <input type="text" name="sub_category" defaultValue={"sport car toys"}  placeholder="Sub Category" className="input input-bordered" />
                </div>
                <div className="form-control">
                   <label className="label">
                      <span className="label-text">Price</span>
                   </label>
-                  <input type="text" name="price"  placeholder="Price" className="input input-bordered" />
+                  <input type="text" name="price" defaultValue={599} placeholder="Price" className="input input-bordered" />
                </div>
                <div className="form-control">
                   <label className="label">
                      <span className="label-text">Rating</span>
                   </label>
-                  <input type="text" name="rating"  placeholder="Rating" className="input input-bordered" />
+                  <input type="text" name="rating" defaultValue={4.2}  placeholder="Rating" className="input input-bordered" />
                </div>
                <div className="form-control">
                   <label className="label">
@@ -98,13 +101,13 @@ const AddToys = () => {
                   <label className="label">
                      <span className="label-text">Description</span>
                   </label>
-                  <input type="text" name="description"  placeholder="Description" className="input input-bordered" />
+                  <input type="text" name="description" defaultValue={"CAMITOY Sports Racing Car for Kids |Boys |Girls | Battery Operated |360 Degree Rotating & Automatic Door Opening |High Speed |3D Light & Music and Bump ..."}  placeholder="Description" className="input input-bordered" />
                </div>
                <div className="form-control">
                   <label className="label">
                      <span className="label-text">Title</span>
                   </label>
-                  <input type="text" name="title"  placeholder="Title" className="input input-bordered" />
+                  <input type="text" name="title" defaultValue={'Baby kids Toy Remote control Helicopter'} placeholder="Title" className="input input-bordered" />
                </div>
             </div>
             <div className="form-control mt-6">

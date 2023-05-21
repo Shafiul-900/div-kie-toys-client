@@ -5,7 +5,7 @@ import Error from "../Pages/Sheaird/Error/Error";
 import Login from "../Pages/Login/Login";
 import Register from "../Pages/Home/Register/Register";
 import AllToys from "../Pages/AllToys/AllToys";
-// import ToyDetails from "../Pages/AllToys/ToyDetails";
+import ToyDetails from "../Pages/AllToys/ToyDetails";
 import AddToys from "../Pages/AddToys/AddToys";
 import MyToys from "../Pages/AddToys/MyToys";
 import PricetRoute from "../PrivetRout/PricetRoute";
@@ -25,11 +25,11 @@ const router = createBrowserRouter([
         path: '/allToys',
         element: <AllToys></AllToys>
       },
-      // {
-      //   path: '/toys/:_id',
-      //   element: <PricetRoute><ToyDetails></ToyDetails></PricetRoute>,
-      //   loader: ({ params }) => fetch(`https://toys-dickie-server.vercel.app/toys/${params._id}`)
-      // },
+      {
+        path: '/toys/:_id',
+        element: <PricetRoute><ToyDetails></ToyDetails></PricetRoute>,
+        loader: ({ params }) => fetch(`https://toys-dickie-server.vercel.app/toys/${params._id}`)
+      },
       {
         path: '/login',
         element: <Login></Login>

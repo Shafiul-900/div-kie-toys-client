@@ -8,7 +8,10 @@ const Category = () => {
     useEffect(() => {
         fetch('https://toys-dickie-server.vercel.app/toys')
             .then(res => res.json())
-            .then(data => setCategory(data))
+            .then(data =>{
+                const cata = data.slice(0, 12);
+                setCategory(cata)
+            })
     }, []);
     useEffect(() => {
         fetch('https://toys-dickie-server.vercel.app/toys')

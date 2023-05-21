@@ -5,13 +5,12 @@ import { AuthContext } from "../../../providers/AuthProvider";
 
 const Navbar = () => {
     const { user, logOut } = useContext(AuthContext);
-
     const handelLogOut = () => {
         logOut()
-        .then(result => {
-            console.log(result);
-        })
-        .catch(error => console.log(error))
+            .then(result => {
+                console.log(result);
+            })
+            .catch(error => console.log(error))
     }
 
     const navItems = <>
@@ -48,18 +47,19 @@ const Navbar = () => {
                     {navItems}
                 </ul>
             </div>
+
             <div className="navbar-end" >
-                {
-                    user && 
-                        // <img style={{ height: "50px" }} className="rounded-full " src={user?.photo_url} title="shafiul Islam" />
-                        <span>{user?.email} <button onClick={handelLogOut}>LogOut</button></span>
-                        //  <Link>
-                        //     <img style={{ height: "50px" }} className="rounded-full " src="https://scontent.fird1-1.fna.fbcdn.net/v/t39.30808-6/300871888_186827353761336_7485609753196859161_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeHdLoiBwgP1L9fDVZvjjWhrXyqPDI9VClpfKo8Mj1UKWu8xWvyMyBxnR3peSH5XCsfY0i7LSmn7UD4bsjZKgIHH&_nc_ohc=_imjC2k4H4wAX_jhHp1&_nc_ht=scontent.fird1-1.fna&oh=00_AfAHm0mU5colS-LTdZUvXzQ8vDiIUVZZHaExptWa_lzweg&oe=646AF887" title="shafiul Islam" />
-                        // </Link>
-               }
+                <div>
+                    {user && 
+                        <img style={{width: "60px"}} className="rounded-full pr-2" src={user.photoURL} alt="" /> 
+                    }
+                </div>
+                {user ?
+                    <span><button className="text-red-400" onClick={handelLogOut}>LogOut</button></span> : <Link className="pr-3 text-red-400" to="/login">LogIn</Link>
+                }
             </div>
         </div>
-    );
+    )
 };
 
 export default Navbar;

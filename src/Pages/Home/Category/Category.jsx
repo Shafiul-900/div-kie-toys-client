@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 const Category = () => {
     const [all, setAll] = useState([]);
-    const [category, setCategory] = useState([]);
+    const [category, setCategory] = useState(all);
 
     useEffect(() => {
         fetch('https://toys-dickie-server.vercel.app/toys')
@@ -22,8 +22,8 @@ const Category = () => {
     }, []);
 
     const handelFilter = (categoryItem) => {
-        const updateItems = category.filter((curItem) => {
-            return curItem.sub_category === categoryItem;
+        const updateItems = all.filter((curItem) => {
+            return curItem.sub_category == categoryItem;
         });
         setCategory(updateItems);
     }
@@ -32,7 +32,7 @@ const Category = () => {
 
     const navItems = <>
         <li><button onClick={() => setCategory(all)}>All</button></li>
-        <li><button onClick={() => handelFilter('Sports Car')}>Sports car</button></li>
+        <li><button onClick={() => handelFilter('sport car toys')}>Sports car</button></li>
         <li><Link onClick={() => handelFilter('truck')}>Truck</Link></li>
         <li><Link onClick={() => handelFilter('regular Car')}>Regular car</Link></li>
         <li><Link onClick={() => handelFilter('mini fire truck')}>Mini fire truck</Link></li>

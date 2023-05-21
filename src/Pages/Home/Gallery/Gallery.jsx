@@ -9,14 +9,18 @@ const Gallery = () => {
     useEffect(() => {
         fetch('https://toys-dickie-server.vercel.app/toys')
             .then(res => res.json())
-            .then(data => setMedia(data))
+            .then(data => {
+                const poduct = data.slice(0, 20);
+                setMedia(poduct);
+            })
+                
     }, []);
 
     return (
         <div className="mb-10 relative">
             <h1 className="text-center text-3xl font-bold mb-10">Toys Gallery</h1>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 w-4/5 mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-3 w-4/5 mx-auto">
                 {
                     media.map((file) => {
                         const { photo } = file;

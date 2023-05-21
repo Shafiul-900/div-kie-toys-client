@@ -38,9 +38,7 @@ const ToyDetails = () => {
 
                     <p>{description}</p>
                 </div>
-                <div className="card-actions justify-end">
-                    <Link to='/alltoys'> <button className="btn btn-primary">Back</button></Link>
-                </div>
+                
             </div>
         </div>
     );

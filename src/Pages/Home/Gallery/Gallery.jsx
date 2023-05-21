@@ -17,7 +17,7 @@ const Gallery = () => {
     }, []);
 
     return (
-        <div className="mb-10 relative">
+        <div className="mb-10 mt-10 relative">
             <h1 className="text-center text-3xl font-bold mb-10">Toys Gallery</h1>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-3 w-4/5 mx-auto">

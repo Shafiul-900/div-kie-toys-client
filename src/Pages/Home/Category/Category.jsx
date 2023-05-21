@@ -1,4 +1,6 @@
 import { useEffect, useState, } from "react";
+import { FaRegStar, FaStar } from "react-icons/fa";
+import Rating from "react-rating";
 import { Link } from "react-router-dom";
 
 const Category = () => {
@@ -8,7 +10,7 @@ const Category = () => {
     useEffect(() => {
         fetch('https://toys-dickie-server.vercel.app/toys')
             .then(res => res.json())
-            .then(data =>{
+            .then(data => {
                 const cata = data.slice(0, 12);
                 setCategory(cata)
             })
@@ -25,19 +27,20 @@ const Category = () => {
         });
         setCategory(updateItems);
     }
-    
+
 
 
     const navItems = <>
-        <li><button onClick={()=> setCategory(all)}>All</button></li>
-        <li><button onClick={()=> handelFilter('Sports Car')}>Sports car</button></li>
-        <li><Link onClick={()=> handelFilter('truck')}>Truck</Link></li>
-        <li><Link onClick={()=> handelFilter('regular Car')}>Regular car</Link></li>
-        <li><Link onClick={()=> handelFilter('mini fire truck')}>Mini fire truck</Link></li>
-        <li><Link onClick={()=> handelFilter('mini police car')}>Mini police car</Link></li>
+        <li><button onClick={() => setCategory(all)}>All</button></li>
+        <li><button onClick={() => handelFilter('Sports Car')}>Sports car</button></li>
+        <li><Link onClick={() => handelFilter('truck')}>Truck</Link></li>
+        <li><Link onClick={() => handelFilter('regular Car')}>Regular car</Link></li>
+        <li><Link onClick={() => handelFilter('mini fire truck')}>Mini fire truck</Link></li>
+        <li><Link onClick={() => handelFilter('mini police car')}>Mini police car</Link></li>
     </>
     return (
         <div className="mt-10">
+            <h1 className="text-5xl text-black text-center">Category</h1>
             <div className=" w-1/3 rounded-xl mx-auto navbar  ">
                 <div className="navbar-start">
                     <div className="dropdown">
@@ -61,7 +64,7 @@ const Category = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 container mx-auto py-5 ">
                     {
                         category.map((toy) => {
-                            const { photo, car_toy_name, price } = toy;
+                            const {  _id, photo, toys_name, price, sub_category, rating, title } = toy;
                             return (
                                 <>
                                     <div className="card  bg-slate-200 shadow-xl">
@@ -69,10 +72,33 @@ const Category = () => {
                                             <img src={photo} alt="Shoes" className="rounded-xl h-72 w-full" />
                                         </figure>
                                         <div className="card-body">
-                                            <h2 className="card-title">{car_toy_name}</h2>
-                                            <div className="card-actions flex">
-                                                <p className="text-xl  text-orange-500">Price: ${price}</p>
+                                            <h2 className="card-title">{toys_name}</h2>
+                                            <div className=" ">
+                                                <div className="flex justify-between">
+                                                    <h3 className="text-xl">{sub_category
+                                                    }</h3>
+                                                    <h3 className="text-2xl  text-black">Price: ${price}</h3>
+                                                </div>
+                                                <h2 className="text-lg">{title}</h2>
+                                                <h2 className="text-lg"> Rating: {rating}</h2>
+                                            </div>
+                                            <div>
 
+                                                <div className='text-xl flex  items-center justify-between '>
+                                                    <Rating
+                                                        placeholderRating={rating}
+                                                        readonly
+                                                        emptySymbol={<FaRegStar></FaRegStar>}
+                                                        placeholderSymbol={<FaStar></FaStar>}
+                                                        fullSymbol={<FaStar></FaStar>}
+                                                    >
+                                                    </Rating>
+
+
+                                                    <Link to={`/toys/${_id}`} className="flex items-center text-xl   rounded-3xl text-orange-500">Details
+                                                    </Link>
+
+                                                </div>
                                             </div>
                                         </div>
                                     </div>

@@ -7,10 +7,10 @@ import banner6 from '../../../assets/bnner/banner.2.jpg';
 
 const Banner = () => {
     return (
-        <div className="carousel w-full h-[600px] mt-9">
+        <div className="carousel  w-full h-[600px]">
             <div id="slide1" className="carousel-item relative w-full">
-                <img src={banner1} className="w-full rounded-xl" />
-                <div className="absolute rounded-xl left-0 h-full flex items-center bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)]">
+                <img src={banner1} className="w-full " />
+                <div className="absolute left-0 h-full flex items-center bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)]">
                     <div className='text-white space-y-7 pl-12 w-1/2 '>
                         <h2 className='text-6xl font-bold'>The best car toys for your baby within your price range</h2>
                         <p>Many have taken care doy from us for their children and they have got the right products.  Can take for your baby</p>
@@ -26,8 +26,8 @@ const Banner = () => {
                 </div>
             </div>
             <div id="slide2" className="carousel-item relative w-full">
-                <img src={banner2} className="w-full rounded-xl" />
-                <div className="absolute rounded-xl left-0 h-full flex items-center bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)]">
+                <img src={banner2} className="w-full " />
+                <div className="absolute  left-0 h-full flex items-center bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)]">
                     <div className='text-white space-y-7 pl-12 w-1/2 '>
                         <h2 className='text-6xl font-bold'>The best car toys for your baby within your price range</h2>
                         <p>Many have taken care doy from us for their children and they have got the right products.  Can take for your baby</p>
@@ -43,8 +43,8 @@ const Banner = () => {
                 </div>
             </div>
             <div id="slide3" className="carousel-item relative w-full">
-                <img src={banner3} className="w-full rounded-xl" />
-                <div className="absolute rounded-xl left-0 h-full flex items-center bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)]">
+                <img src={banner3} className="w-full " />
+                <div className="absolute  left-0 h-full flex items-center bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)]">
                     <div className='text-white space-y-7 pl-12 w-1/2 '>
                         <h2 className='text-6xl font-bold'>The best car toys for your baby within your price range</h2>
                         <p>Many have taken care doy from us for their children and they have got the right products.  Can take for your baby</p>
@@ -60,8 +60,8 @@ const Banner = () => {
                 </div>
             </div>
             <div id="slide4" className="carousel-item relative w-full">
-                <img src={banner4} className="w-full rounded-xl" />
-                <div className="absolute rounded-xl left-0 h-full flex items-center bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)]">
+                <img src={banner4} className="w-full " />
+                <div className="absolute  left-0 h-full flex items-center bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)]">
                     <div className='text-white space-y-7 pl-12 w-1/2 '>
                         <h2 className='text-6xl font-bold'>The best car toys for your baby within your price range</h2>
                         <p>Many have taken care doy from us for their children and they have got the right products.  Can take for your baby</p>
@@ -77,8 +77,8 @@ const Banner = () => {
                 </div>
             </div>
             <div id="slide5" className="carousel-item relative w-full">
-                <img src={banner5} className="w-full rounded-xl" />
-                <div className="absolute rounded-xl left-0 h-full flex items-center bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)]">
+                <img src={banner5} className="w-full " />
+                <div className="absolute  left-0 h-full flex items-center bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)]">
                     <div className='text-white space-y-7 pl-12 w-1/2 '>
                         <h2 className='text-6xl font-bold'>The best car toys for your baby within your price range</h2>
                         <p>Many have taken care doy from us for their children and they have got the right products.  Can take for your baby</p>
@@ -94,8 +94,8 @@ const Banner = () => {
                 </div>
             </div>
             <div id="slide6" className="carousel-item relative w-full">
-                <img src={banner6} className="w-full rounded-xl" />
-                <div className="absolute rounded-xl left-0 h-full flex items-center bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)]">
+                <img src={banner6} className="w-full " />
+                <div className="absolute  left-0 h-full flex items-center bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)]">
                     <div className='text-white space-y-7 pl-12 w-1/2 '>
                         <h2 className='text-6xl font-bold'>The best car toys for your baby within your price range</h2>
                         <p>Many have taken care doy from us for their children and they have got the right products.  Can take for your baby</p>
